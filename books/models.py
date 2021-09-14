@@ -22,7 +22,7 @@ class Owner(models.Model):
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    authors = models.ManyToManyField(Author)
     pub_date = models.DateField()
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE)
 
