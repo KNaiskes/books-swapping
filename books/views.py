@@ -17,3 +17,10 @@ def book_details(request, book_id):
     except Book.DoesNotExist:
         raise Http404('Book does not exist')
     return render(request, 'books/book_details.html', {'book': book})
+
+def authors(request):
+    try:
+        authors_list = Author.objects.all()
+    except Author.DoesNotExist:
+        print('error')
+    return render(request, 'books/authors.html', {'authors_list': authors_list})
