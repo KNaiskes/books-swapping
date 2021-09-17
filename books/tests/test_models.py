@@ -57,3 +57,19 @@ class BookTestCase(TestCase):
         self.assertEqual(
             str(book2), '%s' % (book2.title)
         )
+
+
+class OwnerTestCase(TestCase):
+    def setUp(self):
+        owner1 = Owner.objects.create(
+            first_name='owner1',
+            last_name='owner1_last', email='owner1@email.com'
+        )
+        owner1.books.add(None)
+
+    def test_str(self):
+        owner1 = Owner.objects.get(id=1)
+
+        self.assertEqual(
+            str(owner1), '%s %s' % (owner1.first_name, owner1.last_name)
+        )
