@@ -1,0 +1,29 @@
+from django.test import TestCase
+from django.urls import reverse
+
+from books.models import Author, Book, Owner
+
+class AuthorListViewTest(TestCase):
+    @classmethod
+    def setUpTestData(cls):
+
+        for i in range(2):
+            Author.objects.create(
+                first_name=f'first_name {i}',
+                middle_name=f'middle_name {i}',
+                last_name=f'last_name {i}',
+            )
+
+
+    def test_view_url_location(self):
+        response = self.client.get('/books/authors/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_url_by_name(self):
+        response = self.client.get(reverse('books:authors'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_template(self):
+        response = self.client.get(reverse('books:authors'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'books/authors.html')
