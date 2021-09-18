@@ -3,13 +3,13 @@ from django.http import Http404
 from .models import Author, Book, Owner
 
 
-def index(request):
+def books(request):
     try:
         books_list = Book.objects.all()
     except Book.DoesNotExist:
         print('error')
 
-    return render(request, 'books/index.html', {'books_list': books_list})
+    return render(request, 'books/books.html', {'books_list': books_list})
 
 def book_details(request, book_id):
     try:
