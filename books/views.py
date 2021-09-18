@@ -3,7 +3,7 @@ from django.http import Http404
 from .models import Author, Book, Owner
 
 
-def index(request):
+def books(request):
     try:
         books_list = Book.objects.all()
     except Book.DoesNotExist:
