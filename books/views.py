@@ -9,7 +9,7 @@ def books(request):
     except Book.DoesNotExist:
         print('error')
 
-    return render(request, 'books/index.html', {'books_list': books_list})
+    return render(request, 'books/books.html', {'books_list': books_list})
 
 def book_details(request, book_id):
     try:
