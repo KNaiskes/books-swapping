@@ -35,3 +35,10 @@ def author_details(request, author_id):
 def owners(request):
     owners_list = Owner.objects.all()
     return render(request, 'books/owners.html', {'owners_list': owners_list})
+
+def owner_details(request, owner_id):
+    try:
+        owner = Owner.objects.get(pk=owner_id)
+    except Owner.DoesNotExist:
+        raise Http404('Owner does not exist')
+    return render(request, 'books/owner_details.html', {'owner': owner})
