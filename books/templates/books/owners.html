@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
-{% for owner in owners_list %}
-<h1>{{ owner }}</h1>
-{% endfor %}
+{% block content %}
+
+<ul>
+  {% for owner in owners_list %}
+  <hr/>
+  <li>{{owner.first_name}} {{owner.last_name}}</li>
+  {% endfor %}
+</ul
 
 {% endblock content %}
