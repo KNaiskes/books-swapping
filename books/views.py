@@ -4,12 +4,8 @@ from .models import Author, Book, Owner
 
 
 def books(request):
-    try:
         books_list = Book.objects.all()
-    except Book.DoesNotExist:
-        print('error')
-
-    return render(request, 'books/books.html', {'books_list': books_list})
+        return render(request, 'books/books.html', {'books_list': books_list})
 
 def book_details(request, book_id):
     try:
@@ -19,10 +15,7 @@ def book_details(request, book_id):
     return render(request, 'books/book_details.html', {'book': book})
 
 def authors(request):
-    try:
-        authors_list = Author.objects.all()
-    except Author.DoesNotExist:
-        print('error')
+    authors_list = Author.objects.all()
     return render(request, 'books/authors.html', {'authors_list': authors_list})
 
 def author_details(request, author_id):
