@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
-<h1>{{ book }}</h1>
+{% block content %}
+
+<ul>
+  <li>{{book.title}}</li>
+
+  {% for author in book.authors.all %}
+  <li>{{author.first_name}} {{author.last_name}}</li>
+  {% endfor %}
+
+  <li>{{book.pub_date}}</li>
+</ul
 
 {% endblock content %}

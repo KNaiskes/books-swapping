@@ -2,8 +2,17 @@
 
 {% block content %}
 
-{% for book in books_list %}
-<h1>{{ book }}</h1>
-{% endfor %}
+<ul>
+  {% for book in books_list %}
+  <hr/>
+  <li>{{book.title}}</li>
+
+  {% for author in book.authors.all %}
+  <li>{{author.first_name}} {{author.last_name}}</li>
+  {% endfor %}
+
+  <li>{{book.pub_date}}</li>
+  {% endfor %}
+</ul
 
 {% endblock content %}

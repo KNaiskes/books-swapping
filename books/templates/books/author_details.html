@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
-<h1>{{ author }}</h1>
+{% block content %}
+
+<ul>
+  <li>{{author.first_name}} {{author.middle_name}} {{author.last_name}}</li>
+</ul
 
 {% endblock content %}
