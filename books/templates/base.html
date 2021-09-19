@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title> {{ title }} </title>
+    {% else %}
+    <title>Books-Swapping</title>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+      <body>
+	{% block content %}{% endblock content %}
+      </body>
+</html>
