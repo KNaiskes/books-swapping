@@ -1,5 +1,16 @@
 {% extends 'base.html' %}
 
-<h1>{{ owner }}</h1>
+{% block content %}
+
+<ul>
+  <hr/>
+  <li>{{owner.first_name}} {{owner.last_name}}</li>
+
+  {% for book in owner.books.all %}
+  <li>{{book.title}}</li>
+  {% endfor %}
+
+  <li>{{owner.email}}</li>
+</ul>
 
 {% endblock content %}
