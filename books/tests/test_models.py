@@ -1,16 +1,28 @@
 from django.test import TestCase
 from books.models import Author, Book, Owner
 
-class AuthorTestCase(TestCase):
+class ModelsMixin(TestCase):
     def setUp(self):
-        Author.objects.create(
+        from datetime import date
+        today = date.today()
+
+        self.author1 = Author.objects.create(
             first_name='Author1', middle_name='M1',last_name='AuthLast1'
         )
 
-        Author.objects.create(
+        self.author2 = Author.objects.create(
             first_name='Author2', middle_name='M2',last_name='AuthLast2'
         )
 
+        self.book1 = Book.objects.create(title='title_book1', pub_date=today)
+        self.book1.authors.add(self.author1)
+
+        self.book2 = Book.objects.create(title='title_book2', pub_date=today)
+        self.book2.authors.add(self.author2)
+
+
+
+class AuthorTestCase(ModelsMixin):
     def test_str(self):
         author1 = Author.objects.get(id=1)
         author2 = Author.objects.get(id=2)
@@ -24,25 +36,7 @@ class AuthorTestCase(TestCase):
         )
 
 
-class BookTestCase(TestCase):
-    def setUp(self):
-        from datetime import date
-        today = date.today()
-
-        author1 = Author.objects.create(
-            first_name='Author1', middle_name='M1',last_name='AuthLast1'
-        )
-
-        author2 = Author.objects.create(
-            first_name='Author2', middle_name='M2',last_name='AuthLast2'
-        )
-
-        book1 = Book.objects.create(title='title_book1', pub_date=today)
-        book1.authors.add(author1)
-
-        book2 = Book.objects.create(title='title_book2', pub_date=today)
-        book2.authors.add(author2)
-
+class BookTestCase(ModelsMixin):
     def test_str(self):
         author1 = Author.objects.get(id=1)
         author2 = Author.objects.get(id=2)
