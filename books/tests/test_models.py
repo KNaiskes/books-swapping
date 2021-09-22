@@ -1,16 +1,18 @@
 from django.test import TestCase
 from books.models import Author, Book, Owner
 
-class AuthorTestCase(TestCase):
+class ModelsMixin(TestCase):
     def setUp(self):
-        Author.objects.create(
+        self.author1 = Author.objects.create(
             first_name='Author1', middle_name='M1',last_name='AuthLast1'
         )
 
-        Author.objects.create(
+        self.author2 = Author.objects.create(
             first_name='Author2', middle_name='M2',last_name='AuthLast2'
         )
 
+
+class AuthorTestCase(ModelsMixin):
     def test_str(self):
         author1 = Author.objects.get(id=1)
         author2 = Author.objects.get(id=2)
