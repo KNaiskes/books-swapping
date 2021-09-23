@@ -1,3 +1,4 @@
+[![Django CI](https://github.com/KNaiskes/books-swapping/actions/workflows/django.yml/badge.svg)](https://github.com/KNaiskes/books-swapping/actions/workflows/django.yml)
 # books-swapping
 
 
