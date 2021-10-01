@@ -11,6 +11,7 @@ class Author(models.Model):
 
     class Meta:
         ordering = ['last_name']
+        unique_together = ('first_name', 'middle_name', 'last_name')
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
