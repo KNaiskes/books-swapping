@@ -23,6 +23,7 @@ class Book(models.Model):
 
     class Meta:
         ordering = ['title']
+        unique_together = ('title', 'pub_date')
 
 class Owner(models.Model):
     first_name = models.CharField(max_length=30)
