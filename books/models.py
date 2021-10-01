@@ -28,7 +28,7 @@ class Book(models.Model):
 class Owner(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    email = models.EmailField(max_length=60)
+    email = models.EmailField(max_length=60, unique=True)
     books = models.ManyToManyField(Book)
 
     def __str__(self):
