@@ -2,11 +2,17 @@
 
 {% block content %}
 
-<ul>
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+  </tr>
+  <tr>
   {% for owner in owners_list %}
-  <hr/>
-  <li>{{owner.first_name}} {{owner.last_name}}</li>
+  <td>{{owner.first_name}}</td>
+  <td>{{owner.last_name}}</td>
+  </tr>
   {% endfor %}
-</ul
+</table>
 
 {% endblock content %}
