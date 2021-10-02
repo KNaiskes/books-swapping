@@ -2,14 +2,22 @@
 
 {% block content %}
 
-<ul>
-  <li>{{book.title}}</li>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author(s)</th>
+    <th>Publication Date</th>
+  </tr>
+
+  <tr>
+  <td>{{book.title}}</td>
 
   {% for author in book.authors.all %}
-  <li>{{author.first_name}} {{author.last_name}}</li>
+  <td>{{author.first_name}} {{author.last_name}}</td>
   {% endfor %}
 
-  <li>{{book.pub_date}}</li>
-</ul
+  <td>{{book.pub_date}}</td>
+  </tr>
+</table>
 
 {% endblock content %}
