@@ -2,8 +2,15 @@
 
 {% block content %}
 
-<ul>
-  <li>{{author.first_name}} {{author.middle_name}} {{author.last_name}}</li>
-</ul
+<table>
+  <tr>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Last Name</th>
+    </tr>
+  <td>{{author.first_name}}</td>
+  <td>{{author.middle_name}}</td>
+  <td>{{author.last_name}}</td>
+</table>
 
 {% endblock content %}
