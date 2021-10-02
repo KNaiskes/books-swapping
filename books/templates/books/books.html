@@ -2,17 +2,24 @@
 
 {% block content %}
 
-<ul>
-  {% for book in books_list %}
-  <hr/>
-  <li>{{book.title}}</li>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Author(s)</th>
+    <th>Publication Date</th>
+  </tr>
+  <tr>
+    {% for book in books_list %}
+    <td>{{book.title}}</td>
 
-  {% for author in book.authors.all %}
-  <li>{{author.first_name}} {{author.last_name}}</li>
+    {% for author in book.authors.all %}
+    <td>{{author.first_name}} {{author.last_name}}</td>
+    {% endfor %}
+
+    <td>{{book.pub_date}}</td>
+  </tr>
   {% endfor %}
 
-  <li>{{book.pub_date}}</li>
-  {% endfor %}
-</ul
+</table>
 
 {% endblock content %}
