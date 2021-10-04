@@ -9,6 +9,15 @@
     <title>Books-Swapping</title>
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Navbar start -->
+    <div class="navbar">
+      <a href="{% url 'books:books' %}">Home</a>
+      <a href="{% url 'books:authors' %}">Authors</a>
+      <a href="{% url 'books:owners' %}">Owners</a>
+    </div>
+    <!-- Navbar end -->
+
   </head>
       <body>
 	{% block content %}{% endblock content %}

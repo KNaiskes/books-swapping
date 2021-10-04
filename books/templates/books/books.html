@@ -10,7 +10,8 @@
   </tr>
   <tr>
     {% for book in books_list %}
-    <td>{{book.title}}</td>
+    <td><a href="{% url 'books:book_details' book_id=book.id %}">
+	{{book.title}}</a></td>
 
     {% for author in book.authors.all %}
     <td>{{author.first_name}} {{author.last_name}}</td>
