@@ -11,4 +11,5 @@ urlpatterns = [
     path('owners/', views.owners, name='owners'),
     path('owners/<int:owner_id>/', views.owner_details, name='owner_details'),
 
+    path('books_by_author/<int:author>/', views.books_by_author, name='books_by_author'),
 ]
