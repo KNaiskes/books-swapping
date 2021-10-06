@@ -35,3 +35,13 @@ def owner_details(request, owner_id):
     except Owner.DoesNotExist:
         raise Http404('Owner does not exist')
     return render(request, 'books/owner_details.html', {'owner': owner})
+
+# Filter by
+
+def books_by_author(request, author):
+        try:
+                books = Book.objects.filter(authors=author)
+        except Author.DoesNotExist:
+                books = None
+
+        return render(request, 'books/books_by_author.html', {'books': books})
