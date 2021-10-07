@@ -61,3 +61,15 @@ class AuthorListViewTest(TestCase):
         response = self.client.get(reverse('books:books'))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'books/books.html')
+
+class BooksByAuthor(TestCase):
+
+    def test_view_url_location(self):
+        response = self.client.get('/books/books_by_author/1/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_view_url_by_name(self):
+        response = self.client.get(reverse('books:books_by_author',
+                                           kwargs={'author': 1}))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'books/books_by_author.html')
