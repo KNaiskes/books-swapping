@@ -29,7 +29,7 @@ class AuthorListViewTest(TestCase):
         self.assertTemplateUsed(response, 'books/authors.html')
 
 
-class AuthorListViewTest(TestCase):
+class BookListViewTest(TestCase):
     @classmethod
     def setUpTestData(cls):
 
