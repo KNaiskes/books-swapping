@@ -42,6 +42,21 @@ $ python manage.py runserver
 - Docker
 - Docker Compose
 
+### Replace SQLite with PostgreSQL in settings.py
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
+```
+
 ### Start Docker
 
 ```
