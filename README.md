@@ -35,3 +35,54 @@ $ python manage.py migrate
 ```
 $ python manage.py runserver
 ```
+
+# Use Docker and PostgreSQL (Optional)
+
+### Requirements
+- Docker
+- Docker Compose
+
+### Replace SQLite with PostgreSQL in settings.py
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432,
+    }
+}
+```
+
+### Start Docker
+
+```
+$ sudo systemctl start docker
+```
+
+### Build the container
+
+```
+$ sudo docker-compose build
+```
+
+### Make migrations
+
+```
+$ sudo docker-compose run web python manage.py migrate
+```
+
+### Create admin user
+
+```
+$ sudo docker-compose run web python manage.py createsuperuser
+```
+
+### Start container
+
+```
+$ sudo docker-compose up
+```
