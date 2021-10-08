@@ -35,3 +35,39 @@ $ python manage.py migrate
 ```
 $ python manage.py runserver
 ```
+
+# Use Docker and PostgreSQL (Optional)
+
+### Requirements
+- Docker
+- Docker Compose
+
+### Start Docker
+
+```
+$ sudo systemctl start docker
+```
+
+### Build the container
+
+```
+$ sudo docker-compose build
+```
+
+### Make migrations
+
+```
+$ sudo docker-compose run web python manage.py migrate
+```
+
+### Create admin user
+
+```
+$ sudo docker-compose run web python manage.py createsuperuser
+```
+
+### Start container
+
+```
+$ sudo docker-compose up
+```
