@@ -1,16 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
 <table>
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
+    <th>More Info</th>
   </tr>
   <tr>
   {% for owner in owners_list %}
   <td>{{owner.first_name}}</td>
   <td>{{owner.last_name}}</td>
+  <td><a href="{% url 'books:owner_details' owner_id=owner.id %}">
+     Read More</a></td>
   </tr>
   {% endfor %}
 </table>
