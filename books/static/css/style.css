@@ -105,3 +105,16 @@ th:last-child,
 td:last-child {
   padding-right: 0;
 }
+
+.avatar-photo img {
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
