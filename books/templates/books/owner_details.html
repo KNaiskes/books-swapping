@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block content %}
 
+<!--
 <table>
   <tr>
     <th>First Name</th>
@@ -20,5 +21,7 @@
   <td>{{owner.email}}</td>
   </tr>
 </table>
+-->
+<img src="{% static 'images/test.png' %}" alt="My image">
 
 {% endblock content %}
