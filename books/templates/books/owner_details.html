@@ -2,29 +2,21 @@
 {% load static %}
 {% block content %}
 
-<!--
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>Book(s)</th>
-    <th>Email</th>
-  </tr>
-  <tr>
-  <td>{{owner.first_name}}</td>
-  <td>{{owner.last_name}}</td>
-
-  {% for book in owner.books.all %}
-  <td>{{book.title}}</td>
-  {% endfor %}
-
-  <td>{{owner.email}}</td>
-  </tr>
-</table>
--->
 <div class="center">
   <div class="avatar-photo">
     <img src="{% static 'images/test_avatar.png' %}" alt="My image">
+    <ul>
+      <h3>Contact INFO</h3>
+      <li><strong>Fullname</strong>: {{owner.first_name}} {{owner.last_name}}</li>
+      <li><strong>Email</strong>: {{owner.email}}</li>
+    </ul>
+    <h3>Books this user owns</h3>
+    <ul>
+      {% for book in owner.books.all %}
+      <li><a href="{% url 'books:book_details' book_id=book.id %}">
+	  {{book.title}}</a></li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 {% endblock content %}

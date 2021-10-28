@@ -110,6 +110,7 @@ td:last-child {
     border-radius: 50%;
     width: 300px;
     height: 300px;
+    padding-top: 25px;
 }
 
 .center {
