@@ -13,7 +13,8 @@
     <h3>Books this user owns</h3>
     <ul>
       {% for book in owner.books.all %}
-      <li>{{book.title}}</td>
+      <li><a href="{% url 'books:book_details' book_id=book.id %}">
+	  {{book.title}}</a></li>
       {% endfor %}
     </ul>
   </div>
