@@ -30,6 +30,7 @@ class Owner(models.Model):
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=60, unique=True)
     books = models.ManyToManyField(Book)
+    photo = models.ImageField(upload_to='owners_images')
 
     def __str__(self):
         return '%s %s' % (self.first_name, self.last_name)

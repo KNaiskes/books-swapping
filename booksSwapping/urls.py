@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from books.views import books
 
+from django.conf.urls.static import static
+from django.conf  import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('books/', include('books.urls', namespace='books')),
@@ -24,3 +27,5 @@ urlpatterns = [
     path('', books, name='home'),
     path('home/', books, name='home'),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

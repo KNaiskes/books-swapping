@@ -130,3 +130,6 @@ dmypy.json
 
 # Docker
 data/
+
+# Static files (photos)
+static/
