@@ -4,7 +4,7 @@
 
 <div class="center">
   <div class="avatar-photo">
-    <img src="{% static 'images/test_avatar.png' %}" alt="My image">
+    <img src="{{ owner.photo.url }}" alt="Profile photo">
     <ul>
       <h3>Contact INFO</h3>
       <li><strong>Fullname</strong>: {{owner.first_name}} {{owner.last_name}}</li>
