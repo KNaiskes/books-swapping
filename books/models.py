@@ -3,7 +3,7 @@ from django.db import models
 
 class Author(models.Model):
     first_name = models.CharField(max_length=30)
-    middle_name = models.CharField(max_length=30)
+    middle_name = models.CharField(max_length=30, blank=True, default='')
     last_name = models.CharField(max_length=30)
 
     def __str__(self):
