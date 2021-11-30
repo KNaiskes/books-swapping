@@ -1,6 +1,9 @@
 [![Django CI](https://github.com/KNaiskes/books-swapping/actions/workflows/django.yml/badge.svg)](https://github.com/KNaiskes/books-swapping/actions/workflows/django.yml)
 # books-swapping
+A simple platform to swap books with other users
 
+### Preview
+![1-ANIMATION](https://user-images.githubusercontent.com/6069054/144123865-ca3261a6-bb8c-4340-ad3e-eff24b75fa58.gif)
 
 # Quick Start
 
